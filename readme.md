@@ -2,8 +2,8 @@
 
 ### Contents
 
-[x] callback functions
-[x] map function
+[x] callback functions  
+[x] map function  
 [x] flexbox
 
 #### callback functions
