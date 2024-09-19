@@ -35,4 +35,22 @@ function createBoard() {
     container.appendChild(board);
 }
 
+const handleClick = (square, index) => {
+    console.log(`Square ${index} is clicked`);
+}
+
+function addEventListeners() {
+    // get the references to all the square elements
+    let squares = document.querySelectorAll('.square');
+
+    // iterate through the elements
+    squares.forEach((square, index) => {
+        // for each of the element, attach an onClick event listener
+        square.addEventListener('click', () => {
+            handleClick(square, index);
+        });
+    });
+}
+
 createBoard();
+addEventListeners();

@@ -17,9 +17,9 @@ This is a simple Tic Tac Toe game that can be played by two players. The game is
 ## Tasks
 
 [x] Create a 3x3 grid to represent the game board.  
-[ ] Same as above, but use DOM manipulation to create the grid.  
-[ ] Add a click event listener to each cell of the grid.
-[ ] Update the label of the cell when a cell is clicked. (Initially all the labels are empty)  
+[x] Same as above, but use DOM manipulation to create the grid.  
+[x] Add a click event listener to each cell of the grid.
+[ ] Update the label of the cell to 'X' when a cell is clicked. (Initially all the labels are empty)  
 [ ] Depending on the current player, set the label to 'X' or 'O'.  
 [ ] If a player already marks a cell, prevent the other player from marking the same cell.  
 [ ] Check if a player has won the game after every move.  
