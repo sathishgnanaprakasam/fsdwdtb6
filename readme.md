@@ -20,7 +20,8 @@ This is a simple Tic Tac Toe game that can be played by two players. The game is
 [x] Same as above, but use DOM manipulation to create the grid.  
 [x] Add a click event listener to each cell of the grid.
 [x] Update the label of the cell to 'X' when a cell is clicked. (Initially all the labels are empty)  
-[ ] Depending on the current player, set the label to 'X' or 'O'.  
+[x] Depending on the current player, set the label to 'X' or 'O'.  
+[ ] Show the current player's mark on the screen.
 [ ] If a player already marks a cell, prevent the other player from marking the same cell.  
 [ ] Check if a player has won the game after every move.  
 [ ] If a player has won, display a message indicating the winner and end the game. (Disable all cells)  

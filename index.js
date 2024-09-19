@@ -38,8 +38,16 @@ function createBoard() {
 }
 
 const handleClick = (square, index) => {
-    // update the text content of the clicked square element
-    square.textContent = 'X';
+    if (currentPlayer === 'X') {
+        // update the text content of the clicked square element
+        square.textContent = 'X';
+    } else {
+        // update the text content of the clicked square element
+        square.textContent = 'O';
+    }
+
+    // toggle the player
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
 }
 
 function addEventListeners() {
