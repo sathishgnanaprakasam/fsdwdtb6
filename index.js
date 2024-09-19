@@ -1,3 +1,5 @@
+let currentPlayer = 'X';
+
 function createBoard() {
     // get the reference of the container element
     let container = document.querySelector('.container');
@@ -36,7 +38,8 @@ function createBoard() {
 }
 
 const handleClick = (square, index) => {
-    console.log(`Square ${index} is clicked`);
+    // update the text content of the clicked square element
+    square.textContent = 'X';
 }
 
 function addEventListeners() {
