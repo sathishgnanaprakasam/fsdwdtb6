@@ -16,10 +16,16 @@ This is a simple Tic Tac Toe game that can be played by two players. The game is
 
 ## Tasks
 
-1. Create a 3x3 grid to represent the game board.
-2. Update the label of the cell when a cell is clicked. (Initially all the labels are empty)
-3. Depending on the current player, set the label to 'X' or 'O'.
-4. If a player already marks a cell, prevent the other player from marking the same cell.
-5. Check if a player has won the game after every move.
-6. If a player has won, display a message indicating the winner and end the game. (Disable all cells)
-7. If the game ends in a draw, display a message indicating the draw and end the game. (Disable all cells)
+[x] Create a 3x3 grid to represent the game board.  
+[ ] Same as above, but use DOM manipulation to create the grid.  
+[ ] Add a click event listener to each cell of the grid.
+[ ] Update the label of the cell when a cell is clicked. (Initially all the labels are empty)  
+[ ] Depending on the current player, set the label to 'X' or 'O'.  
+[ ] If a player already marks a cell, prevent the other player from marking the same cell.  
+[ ] Check if a player has won the game after every move.  
+[ ] If a player has won, display a message indicating the winner and end the game. (Disable all cells)  
+[ ] If the game ends in a draw, display a message indicating the draw and end the game. (Disable all cells)
+
+### Doubts
+
+[ ] Using Emoji's - fonts & icons
