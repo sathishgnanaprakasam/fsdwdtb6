@@ -33,6 +33,6 @@ This is a simple Tic Tac Toe game that can be played by two players. The game is
 [x] this keyword
 [x] real time example for higher order functions
 [x] box shadow
-[ ] grid - css and tailwind
+[x] grid - css and tailwind
 [ ] positioning - relative and absolute
 [ ] z-index
