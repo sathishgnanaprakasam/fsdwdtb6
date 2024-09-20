@@ -1,28 +1,26 @@
-* {
-    background-color: purple;
+.box  {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
     color: white;
+    text-align: center;
+    line-height: 100px;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.header {
-    grid-column: 1 / 4;
-}
-
-.menu {
-    grid-row: 2 / 4;
-}
-
-.footer {
-    grid-column: 2 / 4;
-}
-
-.box {
-    padding: 20px;
-    margin: 1px;
-    border: 1px solid white;
+.box1 {
     background-color: green;
+    position: relative;
+    z-index: 300;
 }
+
+.box2 {
+    background-color: purple;
+    position: relative;
+    top: -101px;
+    z-index: 200;
+}
+
+/*
+    z-index: Is to set the order of the elements in the stack.
+    The higher the z-index, the higher the element will be in the stack.
+*/  

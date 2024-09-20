@@ -34,5 +34,11 @@ This is a simple Tic Tac Toe game that can be played by two players. The game is
 [x] real time example for higher order functions
 [x] box shadow
 [x] grid - css and tailwind
-[ ] positioning - relative and absolute
-[ ] z-index
+[x] positioning - relative and absolute
+[x] z-index
+
+Positioning - relative and absolute
+
+- Both when set, we can use top, bottom, left, right to position the element.
+- When we set position: relative, the element is positioned relative to its normal position.
+- When we set position: absolute, the element will be taken out of the normal flow and positioned relative to the nearest positioned ancestor.
