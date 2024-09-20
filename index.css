@@ -9,16 +9,18 @@
 
 .box1 {
     background-color: green;
-    position: relative;
-    z-index: 300;
 }
 
 .box2 {
     background-color: purple;
-    position: relative;
-    top: -101px;
-    z-index: 200;
+    position: absolute;
+    top: 200px;
+    left: 100px;
 }
+
+.box3 {
+    background-color: blue;
+}   
 
 /*
     z-index: Is to set the order of the elements in the stack.
