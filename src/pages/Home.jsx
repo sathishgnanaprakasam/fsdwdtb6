@@ -24,7 +24,7 @@ const Home = () => {
                     </>
                 ) : (
                     <div>
-                        <h1>Welcome, Guest</h1>
+                        <h1>Welcome, Guest!</h1>
                         <button onClick={() => navigate("/login")}>Login</button>
                     </div>
                 )
