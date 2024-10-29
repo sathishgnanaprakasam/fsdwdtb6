@@ -1,12 +1,31 @@
 import { useEffect, useState } from "react";
+import jobServices from "../services/jobServices";
 
 const Home = () => {
 
     const [title, setTitle] = useState("");
+    const [jobs, setJobs] = useState([]);
 
     const searchJobs = (e) => {
         e.preventDefault();
     }
+
+    async function getJobs() {
+        try {
+            const data = await jobServices.getAllJobs();
+            setJobs(data.data);
+        } catch (error) {
+            alert("Failed to fetch jobs");
+        }
+    }
+
+    useEffect(() => {
+        getJobs();
+    }, []);
+
+    useEffect(() => {
+        console.log(jobs);
+    }, [jobs]);
 
     return (
         <div className="container flex flex-col justify-center items-center  gap-4 h-screen">
