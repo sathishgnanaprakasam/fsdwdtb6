@@ -33,16 +33,3 @@ This project is licensed under the MIT License.
 ## Author
 
 Sathish Gnanaprakasam
-
-## Topics/Doubts
-
-- useState Vs useContext
-
-useState:
-
-- useState is a Hook that allows you to have state variables in functional components.
-- useState is applicable only for functional components.
-
-useContext:
-
-- useContext is a Hook that allows you to pass data through the component tree without having to pass props down manually at every level.
