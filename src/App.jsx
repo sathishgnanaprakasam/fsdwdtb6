@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './App.css';
 import Home from "./pages/Home";
+import jobsLoader from "./loaders/jobsLoader";
 
 const App = () => {
 
@@ -8,7 +9,8 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />
+      element: <Home />,
+      loader: jobsLoader
     }
   ]);
 
