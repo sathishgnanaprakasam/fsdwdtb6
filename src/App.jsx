@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import './App.css';
 
 const App = () => {
 
@@ -6,7 +7,7 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <h1>Hello React!</h1>
+      element: <h1>Hello World</h1>
     }
   ]);
 
