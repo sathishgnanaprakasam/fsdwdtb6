@@ -8,24 +8,6 @@ const Home = () => {
         e.preventDefault();
     }
 
-    // is called when the component is mounted
-    // and whenever any state changes
-    // useEffect(() => {
-    //     console.log('Component mounted');
-    // });
-
-    // is called only when the component is mounted
-    // and not when any state changes
-    // useEffect(() => {
-    //     console.log('Component mounted');
-    // }, []);
-
-    // is called only when the component is mounted
-    // and when the state 'title' changes
-    // useEffect(() => {
-
-    // }, [title]);
-
     return (
         <div className="container flex flex-col justify-center items-center  gap-4 h-screen">
             <h1
