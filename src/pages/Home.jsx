@@ -1,19 +1,17 @@
-import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
 
     const [title, setTitle] = useState("");
 
+    const navigate = useNavigate();
+
     const searchJobs = (e) => {
         e.preventDefault();
+
+        navigate("/jobs?q=" + title);
     }
-
-    const jobs = useLoaderData();
-
-    useEffect(() => {
-        console.log(jobs);
-    }, []);
 
     return (
         <div className="container flex flex-col justify-center items-center  gap-4 h-screen">
