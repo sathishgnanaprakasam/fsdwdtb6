@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useLoaderData, useNavigate, useSearchParams } from "react-router-dom";
 import './Jobs.css';
 import jobServices from "../services/jobServices";
