@@ -3,6 +3,8 @@ import './App.css';
 import Home from "./pages/Home";
 import Jobs from "./pages/Jobs";
 import jobsLoader from "./loaders/jobsLoader";
+import JobDetails from "./pages/JobDetails";
+import jobLoader from "./loaders/jobLoader";
 
 const App = () => {
 
@@ -16,6 +18,11 @@ const App = () => {
       path: "/jobs",
       element: <Jobs />,
       loader: jobsLoader
+    },
+    {
+      path: "/jobs/:id",
+      element: <JobDetails />,
+      loader: jobLoader
     }
   ]);
 

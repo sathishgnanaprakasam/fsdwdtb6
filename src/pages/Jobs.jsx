@@ -1,10 +1,15 @@
-import { useLoaderData, useSearchParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useSearchParams } from "react-router-dom";
 
 const Jobs = () => {
 
     const jobs = useLoaderData();
     const [search] = useSearchParams();
     const query = search.get("q");
+    const navigate = useNavigate();
+
+    const handleClick = (id) => {
+        navigate(`/jobs/${id}`);
+    }
 
     return (
         <div
@@ -20,6 +25,7 @@ const Jobs = () => {
                         <div
                             key={job.id}
                             className="my-4 p-4 border border-gray-200 flex flex-col gap-2"
+                            onClick={() => handleClick(job.id)}
                         >
                             <h2
                                 className="text-lg font-bold"
