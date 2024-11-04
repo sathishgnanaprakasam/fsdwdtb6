@@ -1,48 +1,172 @@
-# Job Portal Application
+# Databases
 
-## Description
+- [x] Introduction to database
+- [x] intro to mysql engines
+- [x] What is mysql?
+- [ ] basic queries - create db, table
+- [ ] insert, update, alter
+- [ ] select - where clause, distinct
+- [ ] groupby, order, offset, limit
 
-This is a job portal application that allows users to search for jobs and apply for them.
+## Introduction to database
 
-## Features
+- Database is a collection of data stored in a computer system.
+- Data can be stored in the form of tables or objects.
+- Data stored in the form of tables is called structured or relational data.
+- Data stored in the form of objects is called unstructured data.
 
-- Job Search Page: Users can search for jobs based on the job title, location, and company name.
+## Intro to DB Engines
 
-## Technologies
+- Database engines are database management systems that are used to manage the data stored in the database.
+- There are different types of database engines available in the market.
+  - SQL Engines: MySQL, PostgreSQL, Oracle, Microsoft SQL Server
+  - NoSQL Engines: MongoDB, CouchDB, Cassandra, Redis
+  - Embedded Engines: SQLite, H2
 
-**Frontend:** React  
-**Backend:** Node.js  
-**Database:** MongoDB  
-**Framework**: Express  
-**Authentication:** JWT
+## Intro to Mysql Engines
 
-## Installation
+- MySQL is an open-source relational database management system.
+- It is one of the most popular database engines in the world.
+- MySQL is used to store and manage data in the form of tables.
 
-1. Clone the repository
-2. Install dependencies
-3. Run the client
+## What is SQL?
 
-## License
+- SQL stands for Structured Query Language.
+- It is a standard language used to interact with the database.
+- SQL is used to create, read, update, and delete data in the database.
+- SQL is categorized into:
+  - DDL (Data Definition Language): CREATE, ALTER, DROP
+  - DML (Data Manipulation Language): INSERT, UPDATE, DELETE
+  - DQL (Data Query Language): SELECT
+  - DCL (Data Control Language): GRANT, REVOKE
+  - DTL (Data Transaction Language): COMMIT, ROLLBACK
 
-This project is licensed under the MIT License.
+## Basic Queries
 
-## Author
+### Show Existing Databases
 
-Sathish Gnanaprakasam
+```sql
+SHOW DATABASES;
+```
 
-### API Versioning
+### Show Version of MySQL
 
-The API versioning is done using the URL path. For example, to access version 1 of the API, the URL would be `http://localhost:5000/api/v1/`.
+```sql
+SELECT VERSION();
+```
 
-- The advantage of this approach is that it allows for multiple versions of the API to be maintained simultaneously.
+### Show Current Date and Time
 
-### FrontEnd Routes
+```sql
+SELECT NOW();
+```
 
-- Home Page (Search Jobs), route: `/`
-  Users would be able to type a keyword matching the job titles to search for jobs.
+### To view the currently selected database
 
-- Search Results Page, route: '/jobs/page/:page'
-  Users would be able to see the search results based on the search query and paginated.
+```sql
+SELECT DATABASE();
+```
 
-- Job Details Page, route: '/jobs/:id'
-  Users would be able to see the details of a job and apply for it.
+### Create a Database
+
+```sql
+CREATE DATABASE mydb;
+```
+
+### Use a Database
+
+```sql
+USE mydb;
+```
+
+### Drop a Database
+
+```sql
+DROP DATABASE mydb;
+```
+
+### Show Tables in a Database
+
+```sql
+SHOW TABLES;
+```
+
+Sample Tables:
+
+Products Table:
+
+| id  | name     | price | quantity |
+| --- | -------- | ----- | -------- |
+| 1   | Laptop   | 50000 | 10       |
+| 2   | Mobile   | 20000 | 20       |
+| 3   | Tablet   | 10000 | 30       |
+| 4   | Desktop  | 40000 | 15       |
+| 5   | Printer  | 5000  | 25       |
+| 6   | Scanner  | 3000  | 35       |
+| 7   | Keyboard | 1000  | 40       |
+| 8   | Mouse    | 500   | 50       |
+| 9   | Speaker  | 2000  | 60       |
+| 10  | Headset  | 1500  | 70       |
+
+### Create a Table
+
+```sql
+CREATE TABLE products (
+    id INT,
+    name CHAR(50),
+    price DECIMAL(10, 2),
+    quantity INT
+);
+```
+
+### Describe a Table
+
+```sql
+DESCRIBE products;
+```
+
+or
+
+```sql
+desc products;
+```
+
+### Add Primary Key separately after creating a table
+
+```sql
+ALTER TABLE products ADD PRIMARY KEY (id);
+```
+
+### Insert Data into a Table
+
+```sql
+INSERT INTO products (id, name, price, quantity) VALUES
+(1, 'Laptop', 50000, 10),
+(2, 'Mobile', 20000, 20),
+(3, 'Tablet', 10000, 30),
+(4, 'Desktop', 40000, 15),
+(5, 'Printer', 5000, 25),
+(6, 'Scanner', 3000, 35),
+(7, 'Keyboard', 1000, 40),
+(8, 'Mouse', 500, 50),
+(9, 'Speaker', 2000, 60),
+(10, 'Headset', 1500, 70);
+```
+
+### Delete all rows from a table
+
+```sql
+DELETE FROM products;
+```
+
+or
+
+```sql
+TRUNCATE TABLE products;
+```
+
+### View all rows from a table
+
+```sql
+SELECT * FROM products;
+```
