@@ -3,8 +3,8 @@
 - [x] Introduction to database
 - [x] intro to mysql engines
 - [x] What is mysql?
-- [ ] basic queries - create db, table
-- [ ] insert, update, alter
+- [x] basic queries - create db, table
+- [x] insert, update, alter
 - [ ] select - where clause, distinct
 - [ ] groupby, order, offset, limit
 
