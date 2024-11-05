@@ -5,8 +5,13 @@
 - [x] What is mysql?
 - [x] basic queries - create db, table
 - [x] insert, update, alter
-- [ ] select - where clause, distinct
+- [x] select - where clause, distinct
 - [ ] groupby, order, offset, limit
+- [ ] Normalization, select queries
+- [ ] Joins, subqueries
+- [ ] Pros and Cons of relational databases
+- [ ] DB model design
+- [ ] Relational Database Vs Non Relational Database
 
 ## Introduction to database
 
@@ -165,8 +170,69 @@ or
 TRUNCATE TABLE products;
 ```
 
-### View all rows from a table
+### View all rows and all columns from a table
 
 ```sql
 SELECT * FROM products;
+```
+
+### To select specific columns from a table
+
+```sql
+SELECT id, name FROM products;
+```
+
+### To select specific rows from a table
+
+```sql
+SELECT * FROM products WHERE id = 1;
+```
+
+More Examples:
+
+```sql
+SELECT * FROM products WHERE price > 10000;
+SELECT * FROM products WHERE price BETWEEN 1000 AND 5000;
+SELECT * FROM products WHERE name LIKE 'L%';
+SELECT * FROM products WHERE name LIKE '%e';
+SELECT * FROM products WHERE name LIKE '%e%';
+select * from products where name like 'L%' and price > 10000;
+select * from products where name like 'L%' or price > 10000;
+```
+
+### Char Vs Varchar:
+
+- CHAR is fixed length and VARCHAR is variable length.
+- CHAR is faster than VARCHAR.
+- CHAR is used when the length of the column is fixed.
+- VARCHAR is used when the length of the column is variable.
+
+### Update Data in a Table
+
+```sql
+UPDATE products SET price = 60000 WHERE id = 1;
+```
+
+### Add a Column to a Table
+
+```sql
+ALTER TABLE products ADD description TEXT;
+```
+
+### Update Data in a Table
+
+```sql
+UPDATE products SET description = 'This is a laptop' WHERE id = 1;
+```
+
+### Delete a Column from a Table
+
+```sql
+ALTER TABLE products DROP description;
+```
+
+### Delete Data from a Table
+
+```sql
+DELETE FROM products WHERE id = 1;
 ```
