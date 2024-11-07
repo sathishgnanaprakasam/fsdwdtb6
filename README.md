@@ -6,7 +6,7 @@
 [x] Package.json , package-lock.json  
 [x] Dependencies Vs dev dependencies  
 [x] Understanding Nodemodules  
-[ ] Built In , third party & custom packages  
+[x] Built In , third party & custom packages  
 [ ] Filesystem in nodejs
 
 ## What is Node JS?
@@ -48,9 +48,26 @@
 
 - Built-in packages: The packages that are provided by Node.js.
   - http: The http module provides a way of working with http.
+  - fs: The fs module provides a way of working with the file system.
+  - path: The path module provides a way of working with directories and file paths.
+  - os: The os module provides a way of working with the operating system.(os.mkdir(), os.rmdir())
 - Third-party packages: The packages that are provided by the third-party developers.
-  - nodemon: nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+  - **nodemon:** nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+  - **express:** Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+  - **mongoose:** Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
+  - **axios:** Axios is a promise-based HTTP client for the browser and Node.js.
+  - **body-parser:** Node.js body parsing middleware or **express.json()**.
+  - **cookie-parser:** Parse Cookie header and populate req.cookies with an object keyed by the cookie names.
+  - **cors:** CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.(Cross-Origin Resource Sharing)
+  - **dotenv:** Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
+  - **jsonwebtoken:** JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties.
+  - **bcryptjs:** Optimized bcrypt in JavaScript with zero dependencies.
+  - **multer:** Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files.
+  - **nodemailer:** Nodemailer is a module for Node.js applications to allow easy as cake email sending.
+  - **morgan:** HTTP request logger middleware for node.js.
 - Custom packages: The packages that are created by the developers.
+  - **my-package:** A custom package created by the developer.
+  - **logger:** A custom package created by the developer.
 
 ## Terminal Commands
 
@@ -62,4 +79,3 @@
 - `npm uninstall <package-name>`: To uninstall a package.
 - `npm uninstall <package-name> --save-dev`: To uninstall a package as a dev dependency.
 - `npm list`: To list all the packages.
-
