@@ -26,3 +26,12 @@ fs.appendFile('./hello.txt', '\nThis is test content.', (err) => {
 
     console.log('File has been written.');
 });
+
+fs.unlink('./hello.txt', (err) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    console.log('File has been deleted.');
+});
