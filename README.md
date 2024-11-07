@@ -1,12 +1,12 @@
 # MongoDB
 
-- [ ] Why mongodb?
-- [ ] What is collection?
-- [ ] creation of database, collections, documents
-- [ ] use of operators in find() query
-- [ ] What is document?
-- [ ] Mongodb vs MySQL
-- [ ] find - query & projection
+- [x] Why mongodb?
+- [x] What is collection?
+- [x] creation of database, collections, documents
+- [x] use of operators in find() query
+- [x] What is document?
+- [x] Mongodb vs MySQL
+- [x] find - query & projection
 
 ## Why mongodb?
 
