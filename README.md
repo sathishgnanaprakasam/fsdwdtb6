@@ -98,10 +98,10 @@
 ### Contents
 
 [x] What is express.js?  
-[ ] What is middleware?  
-[ ] Custom middlewares  
+[x] What is middleware?  
+[x] Custom middlewares  
 [x] Launch app.listen()  
-[ ] Understanding inbuilt middlewares
+[x] Understanding inbuilt middlewares
 
 ## What is express.js?
 
@@ -110,3 +110,22 @@
 ## Launch app.listen()
 
 - The app.listen() method is used to bind and listen for connections on the specified host and port.
+
+## PORT Number
+
+- The port number is a way to identify a specific process to which an Internet or other network message is to be forwarded when it arrives at a server.
+
+Range of port numbers:
+
+- Well Known Ports: 0 to 1023
+- Registered Ports: 1024 to 49151
+- Dynamic Ports: 49152 to 65535
+
+Commonly used port numbers:
+
+- HTTP: 80
+- HTTPS: 443
+- FTP: 21
+- SSH: 22
+- SMTP: 25
+- POP3: 110
