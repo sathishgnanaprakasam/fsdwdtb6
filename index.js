@@ -1,21 +1,15 @@
-// Creating a simple web server using Nodejs
-// We need the http module to create a server
-// import http module
-const http = require('http');
+// import express from 'express';
+const express = require('express');
 
-// create a server object
-const server = http.createServer((request, response) => {
-    console.log('Request received');
-    // set the response header
-    // response.writeHead(200, { 'Content-Type': 'text/plain' });
-    // set the response body
-    // response.write('Hello World');
-    // end the response
+// create an express application
+const app = express();
 
-    response.end('Hello World');
+// set up a simple route
+app.get('/', (request, response) => {
+    response.json({ message: 'Welcome to the express server' });
 });
 
-// listen to a port
-server.listen(3001, () => {
-    console.log('Server is running on port 3001');
+// listen for requests
+app.listen(3001, () => {
+    console.log('Server is running on port http://localhost:3001');
 });

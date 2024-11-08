@@ -100,9 +100,13 @@
 [x] What is express.js?  
 [ ] What is middleware?  
 [ ] Custom middlewares  
-[ ] Launch app.listen()  
+[x] Launch app.listen()  
 [ ] Understanding inbuilt middlewares
 
 ## What is express.js?
 
 - Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+
+## Launch app.listen()
+
+- The app.listen() method is used to bind and listen for connections on the specified host and port.
