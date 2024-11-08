@@ -7,7 +7,8 @@
 [x] Dependencies Vs dev dependencies  
 [x] Understanding Nodemodules  
 [x] Built In , third party & custom packages  
-[ ] Filesystem in nodejs
+[x] Filesystem in nodejs
+[x] http module in nodejs - a simple server
 
 ## What is Node JS?
 
@@ -79,3 +80,29 @@
 - `npm uninstall <package-name>`: To uninstall a package.
 - `npm uninstall <package-name> --save-dev`: To uninstall a package as a dev dependency.
 - `npm list`: To list all the packages.
+
+## Package.json Vs package-lock.json
+
+- package.json: The package.json file is the heart of the Node.js application. It contains the metadata of the project.
+
+- package-lock.json: The package-lock.json is automatically generated for any operations where npm modifies either the node_modules tree or package.json.
+
+## git merge
+
+- `git merge <branch-name>`: To merge the branch into the current branch.
+- merging a branch into another branch is to bring the changes from one branch to another branch.
+- the best practice is to merge the main branch into the feature branch and then merge the feature branch into the main branch.
+
+## Expressjs and Middlewares
+
+### Contents
+
+[x] What is express.js?  
+[ ] What is middleware?  
+[ ] Custom middlewares  
+[ ] Launch app.listen()  
+[ ] Understanding inbuilt middlewares
+
+## What is express.js?
+
+- Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.

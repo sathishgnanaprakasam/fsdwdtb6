@@ -1,11 +1,21 @@
-const { createServer } = require('http');
+// Creating a simple web server using Nodejs
+// We need the http module to create a server
+// import http module
+const http = require('http');
 
-const server = createServer((req, res) => {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World!\n');
+// create a server object
+const server = http.createServer((request, response) => {
+    console.log('Request received');
+    // set the response header
+    // response.writeHead(200, { 'Content-Type': 'text/plain' });
+    // set the response body
+    // response.write('Hello World');
+    // end the response
+
+    response.end('Hello World');
 });
 
-// starts a simple http server locally on port 3000
-server.listen(3000, '127.0.0.1', () => {
-    console.log('Listening on 127.0.0.1:3000');
+// listen to a port
+server.listen(3001, () => {
+    console.log('Server is running on port 3001');
 });
