@@ -133,3 +133,7 @@ Commonly used port numbers:
 - SSH: 22
 - SMTP: 25
 - POP3: 110
+
+## JSON-SERVER
+
+json-server --port 3001 --watch db.json
