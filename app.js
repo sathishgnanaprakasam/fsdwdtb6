@@ -1,6 +1,7 @@
 // import express from 'express';
 const express = require('express');
 const logger = require('./middleware/logger');
+const jobRouter = require('./routes/jobRoutes');
 
 // create an express application
 const app = express();
@@ -12,16 +13,6 @@ app.use(express.json());
 app.use(logger);
 
 // set up a simple route
-app.get('/hello', (request, response) => {
-    response.send('Hello from GET');
-});
-
-app.post('/hello', (request, response) => {
-    response.send('Hello from POST');
-});
-
-app.get('/world', (request, response) => {
-    response.send('World from GET');
-});
+app.use('/jobs', jobRouter);
 
 module.exports = app;
