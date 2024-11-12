@@ -21,8 +21,16 @@ app.use((request, response, next) => {
 });
 
 // set up a simple route
-app.get('/:id', (request, response) => {
-    response.json({ message: 'Welcome to the express server' });
+app.get('/hello', (request, response) => {
+    response.send('Hello from GET');
+});
+
+app.post('/hello', (request, response) => {
+    response.send('Hello from POST');
+});
+
+app.get('/world', (request, response) => {
+    response.send('World from GET');
 });
 
 // listen for requests

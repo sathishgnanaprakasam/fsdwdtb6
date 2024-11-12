@@ -41,6 +41,10 @@
 - Dependencies: Dependencies are the packages that are required for the application to run.
 - Dev Dependencies: Dev dependencies are the packages that are required for the development of the application.
 
+next() function in Express.js
+
+- The next() function is used to pass control to the next middleware function.
+
 ## Understanding Nodemodules
 
 - Node modules are the libraries that are used in the Node.js application.
