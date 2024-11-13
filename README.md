@@ -137,3 +137,22 @@ Commonly used port numbers:
 ## JSON-SERVER
 
 json-server --port 3001 --watch db.json
+
+[x] What is MVC?
+[x] Split our existing code to MVC pattern
+[x] Follow upcoming code in MVC pattern
+[ ] Getting Connected with MongoDB
+[ ] What is Mongoose?
+[ ] Creating & understanding Schemas using Mongoose
+
+## What is MVC?
+
+- MVC stands for Model-View-Controller.
+- It is a software architectural pattern for implementing user interfaces.
+- It divides the application into three interconnected components: Model, View, and Controller.
+
+For the Node.js application:
+
+- Model: The model represents the data, the rules that govern the data, and the relationships between the data.
+- View: Instead of view, we use routes in Node.js.
+- Controller: The controller is responsible for processing the data and generating the response.
