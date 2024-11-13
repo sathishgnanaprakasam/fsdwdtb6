@@ -156,3 +156,16 @@ For the Node.js application:
 - Model: The model represents the data, the rules that govern the data, and the relationships between the data.
 - View: Instead of view, we use routes in Node.js.
 - Controller: The controller is responsible for processing the data and generating the response.
+
+## Setting up Backend Application using NodeJS + ExpressJS + MongoDB
+
+1. Create a new directory.
+2. Open the terminal and navigate to the directory.
+3. Run the command `npm init` to create a package.json file or run `npm init -y` to create a package.json file with default values.
+4. Create a new file `index.js`.
+5. Install the required packages using the command `npm install mongoose`.
+6. Initialize the repository as a git repository using the command `git init`.
+7. Create a `.gitignore` file and add the `node_modules` folder to it.
+8. In the `index.js` file, write a code to connect to the MongoDB database.
+9. Run the application using the command `node index.js`.
+10. Install express using the command `npm install express`.
