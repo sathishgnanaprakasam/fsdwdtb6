@@ -203,3 +203,5 @@ For the Node.js application:
   "skills": ["Python", "FastAPI", "PostgreSQL", "Git", "GitHub", "AWS"]
 }
 ```
+
+[POSTMAN API Documentation URL: ](https://documenter.getpostman.com/view/29191458/2sAY55bJ7g#50350010-536d-423f-ab27-b2af5383db06)
