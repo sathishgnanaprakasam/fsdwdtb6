@@ -1,4 +1,7 @@
 const User = require('../models/user');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 const authController = {
     register: async (request, response) => {
@@ -14,11 +17,14 @@ const authController = {
                 return response.status(400).json({ message: 'User already exists' });
             }
 
+            // hash the password
+            const hashedPassword = await bcrypt.hash(password, 10);
+
             // create a new user object
             const newUser = new User({
                 name,
                 email,
-                password
+                password: hashedPassword
             });
 
             // save the user object to the database
@@ -31,7 +37,37 @@ const authController = {
         }
     },
     login: async (request, response) => {
+        try {
+            // get the email and password from the request body
+            const { email, password } = request.body;
 
+            // check if the user exists
+            const user = await User.findOne({ email: email });
+
+            // if the user does not exist, return an error message
+            if (!user) {
+                return response.status(400).json({ message: 'User does not exist' });
+            }
+
+            // check if the password is correct
+            const passwordIsValid = await bcrypt.compare(password, user.password);
+
+            // if the password is incorrect, return an error message
+            if (!passwordIsValid) {
+                return response.status(400).json({ message: 'Invalid password' });
+            }
+
+            // generate a token
+            const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET,);
+
+            // store the token in the cookie
+            response.cookie('token', token, { httpOnly: true });
+
+            // return a success message
+            return response.status(200).json({ message: 'Login successful' });
+        } catch (error) {
+            return response.status(500).json({ message: error.message });
+        }
     },
     logout: async (request, response) => {
 
