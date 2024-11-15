@@ -70,7 +70,15 @@ const authController = {
         }
     },
     logout: async (request, response) => {
+        try {
+            // clear the cookie
+            response.clearCookie('token');
 
+            // return a success message
+            return response.status(200).json({ message: 'Logout successful' });
+        } catch (error) {
+            return response.status(500).json({ message: error.message });
+        }
     }
 }
 
