@@ -79,6 +79,20 @@ const authController = {
         } catch (error) {
             return response.status(500).json({ message: error.message });
         }
+    },
+    me: async (request, response) => {
+        try {
+            // get the user id from the request object
+            const userId = request.userId;
+
+            // find the user by id
+            const user = await User.findById(userId).select('-password -__v -createdAt -updatedAt -_id');
+
+            // return the user details
+            return response.status(200).json(user);
+        } catch (error) {
+            return response.status(500).json({ message: error.message });
+        }
     }
 }
 
