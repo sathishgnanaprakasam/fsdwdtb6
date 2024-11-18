@@ -4,8 +4,8 @@ require('dotenv').config();
 const auth = {
     isAuthenticated: (request, response, next) => {
         try {
-            // extract the token from the cookie
-            const token = request.cookies.token;
+            // extract the token from the request headers
+            const token = request.headers.authorization.split(' ')[1];
 
             // if the token is not present, return an error message
             if (!token) {
