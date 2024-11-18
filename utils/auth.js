@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+const User = require('../models/user');
 
 const auth = {
     isAuthenticated: (request, response, next) => {
@@ -22,6 +23,24 @@ const auth = {
             next();
         } catch (error) {
             return response.status(500).json({ message: error.message });
+        }
+    },
+    allowRoles: (roles) => {
+        return async (request, response, next) => {
+            try {
+                // Get the user role from the database
+                const user = await User.findById(request.userId);
+
+                // Check if the user has the required role
+                if (!roles.includes(user.role)) {
+                    return response.status(403).json({ message: 'Forbidden' });
+                }
+
+                // Call the next middleware
+                next();
+            } catch (error) {
+                return response.status(500).json({ message: error.message });
+            }
         }
     }
 }
