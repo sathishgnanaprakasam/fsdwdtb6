@@ -3,7 +3,7 @@ const Company = require('../models/company');
 const companyController = {
     getAllCompanies: async (request, response) => {
         try {
-            const companies = await Company.find();
+            const companies = await Company.find().select('-__v -createdAt -updatedAt');
             return response.status(200).json(companies);
         } catch (error) {
             return response.status(500).json({ message: error.message });
@@ -13,7 +13,7 @@ const companyController = {
         try {
             const { id } = request.params;
 
-            const company = await Company.findById(id);
+            const company = await Company.findById(id).select('-__v -createdAt -updatedAt');
 
             if (!company) {
                 return response.status(404).json({ message: 'Company not found' });
@@ -26,10 +26,12 @@ const companyController = {
     },
     createCompany: async (request, response) => {
         try {
-            const { name, location, email, phone, website } = request.body;
+            let { name, location, email, phone, website } = request.body;
+
+            name = name.trim().toLowerCase();
 
             // check if the company already exists
-            const companyExists = await Company.find({ name: name.toLowerCase() });
+            const companyExists = await Company.find({ name: name });
 
             if (companyExists.length > 0) {
                 return response.status(400).json({ message: 'Company already exists' });
@@ -54,10 +56,12 @@ const companyController = {
         try {
             const { id } = request.params;
 
-            const { name, location, email, phone, website } = request.body;
+            let { name, location, email, phone, website } = request.body;
+
+            if (name) name = name.trim().toLowerCase();
 
             await Company.findByIdAndUpdate(id, {
-                name: name.toLowerCase(),
+                name,
                 location,
                 email,
                 phone,
