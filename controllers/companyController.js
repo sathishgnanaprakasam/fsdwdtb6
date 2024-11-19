@@ -1,4 +1,5 @@
 const Company = require('../models/company');
+const User = require('../models/user');
 
 const companyController = {
     getAllCompanies: async (request, response) => {
@@ -80,6 +81,49 @@ const companyController = {
             await Company.findByIdAndDelete(id);
 
             return response.status(200).json({ message: 'Company deleted successfully' });
+        } catch (error) {
+            return response.status(500).json({ message: error.message });
+        }
+    },
+    assignUserToCompany: async (request, response) => {
+        try {
+            const { id, userId } = request.params;
+
+            // find the company
+            const company = await Company.findById(id);
+
+            // check if the company exists
+            if (!company) {
+                return response.status(404).json({ message: 'Company not found' });
+            }
+
+            // check if the user is already assigned to the company
+            if (company.manager == userId) {
+                return response.status(400).json({ message: 'User already assigned to the company' });
+            }
+
+            // find the user
+            const user = await User.findById(userId);
+
+            // check if the user exists
+            if (!user) {
+                return response.status(404).json({ message: 'User not found' });
+            }
+
+            // assign the user to the company
+            company.manager = userId;
+
+            await company.save();
+
+            // assign the company to the user
+            user.company = id;
+
+            // change the role of the user
+            user.role = 'manager';
+
+            await user.save();
+
+            return response.status(200).json({ message: 'User assigned to the company successfully' });
         } catch (error) {
             return response.status(500).json({ message: error.message });
         }

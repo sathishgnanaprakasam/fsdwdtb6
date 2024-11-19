@@ -13,5 +13,6 @@ companyRouter.get('/:id', companyController.getCompanyById);
 companyRouter.post('/', auth.isAuthenticated, auth.allowRoles(['admin']), companyController.createCompany);
 companyRouter.put('/:id', auth.isAuthenticated, auth.allowRoles(['admin']), companyController.updateCompany);
 companyRouter.delete('/:id', auth.isAuthenticated, auth.allowRoles(['admin']), companyController.deleteCompany);
+companyRouter.get('/:id/assign/:userId', auth.isAuthenticated, auth.allowRoles(['admin']), companyController.assignUserToCompany);
 
 module.exports = companyRouter;

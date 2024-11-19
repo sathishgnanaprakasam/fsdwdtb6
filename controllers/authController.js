@@ -86,7 +86,7 @@ const authController = {
             const userId = request.userId;
 
             // find the user by id
-            const user = await User.findById(userId).select('-password -__v -createdAt -updatedAt -_id');
+            const user = await User.findById(userId).populate('company').select('-password -__v -createdAt -updatedAt');
 
             // return the user details
             return response.status(200).json(user);
