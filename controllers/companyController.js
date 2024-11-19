@@ -10,7 +10,19 @@ const companyController = {
         }
     },
     getCompanyById: async (request, response) => {
+        try {
+            const { id } = request.params;
 
+            const company = await Company.findById(id);
+
+            if (!company) {
+                return response.status(404).json({ message: 'Company not found' });
+            }
+
+            return response.status(200).json(company);
+        } catch (error) {
+            return response.status(500).json({ message: error.message });
+        }
     },
     createCompany: async (request, response) => {
         try {
@@ -39,10 +51,34 @@ const companyController = {
         }
     },
     updateCompany: async (request, response) => {
+        try {
+            const { id } = request.params;
 
+            const { name, location, email, phone, website } = request.body;
+
+            await Company.findByIdAndUpdate(id, {
+                name: name.toLowerCase(),
+                location,
+                email,
+                phone,
+                website
+            });
+
+            return response.status(200).json({ message: 'Company updated successfully' });
+        } catch (error) {
+            return response.status(500).json({ message: error.message });
+        }
     },
     deleteCompany: async (request, response) => {
+        try {
+            const { id } = request.params;
 
+            await Company.findByIdAndDelete(id);
+
+            return response.status(200).json({ message: 'Company deleted successfully' });
+        } catch (error) {
+            return response.status(500).json({ message: error.message });
+        }
     }
 }
 
