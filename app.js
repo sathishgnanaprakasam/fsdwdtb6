@@ -3,6 +3,7 @@ const express = require('express');
 const jobsRouter = require('./routes/jobRoutes');
 const authRouter = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
+const companyRouter = require('./routes/companyRoutes');
 
 // create an express app
 const app = express();
@@ -16,6 +17,7 @@ app.use(cookieParser());
 // define the root route
 app.use('/api/v1/jobs', jobsRouter);
 app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/companies', companyRouter);
 
 // export the app
 module.exports = app;
