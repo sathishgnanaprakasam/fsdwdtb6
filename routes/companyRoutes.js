@@ -10,8 +10,8 @@ companyRouter.get('/', companyController.getAllCompanies);
 companyRouter.get('/:id', companyController.getCompanyById);
 
 // protected routes - allowed [`admin`]
-companyRouter.post('/', auth.allowRoles(['admin']), companyController.createCompany);
-companyRouter.put('/:id', auth.allowRoles(['admin']), companyController.updateCompany);
-companyRouter.delete('/:id', auth.allowRoles(['admin']), companyController.deleteCompany);
+companyRouter.post('/', auth.isAuthenticated, auth.allowRoles(['admin']), companyController.createCompany);
+companyRouter.put('/:id', auth.isAuthenticated, auth.allowRoles(['admin']), companyController.updateCompany);
+companyRouter.delete('/:id', auth.isAuthenticated, auth.allowRoles(['admin']), companyController.deleteCompany);
 
 module.exports = companyRouter;
