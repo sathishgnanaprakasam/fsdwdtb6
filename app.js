@@ -6,9 +6,16 @@ const cookieParser = require('cookie-parser');
 const companyRouter = require('./routes/companyRoutes');
 const morgan = require('morgan');
 const logger = require('./utils/logger');
+const cors = require('cors');
 
 // create an express app
 const app = express();
+
+// add middleware to enable CORS
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}));
 
 // add middleware to parse JSON
 app.use(express.json());
